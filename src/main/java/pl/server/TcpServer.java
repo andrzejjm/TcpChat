@@ -6,28 +6,38 @@ import java.net.Socket;
 
 public class TcpServer {
 
-   private ServerSocket server;
+   private ServerSocket serverSocket;
+   private Socket socket;
 
-   public TcpServer() {
-       try {
-           server = new ServerSocket(8085);
-       } catch (IOException e) {
-           e.printStackTrace();
-       }
+   private BufferedReader keyReader;
+
+   private PrintWriter writer;
+   private BufferedReader reader;
+
+   private String reciveMessage;
+   private String sendMessage;
+
+   public TcpServer() throws  Exception {
+        serverSocket = new ServerSocket(8085);
    }
 
    public void listen() throws Exception {
-       String data = null;
+        socket = serverSocket.accept();
+        System.out.println("Połączenie: " + socket.getInetAddress().getHostName());
 
-       Socket client = server.accept();
-       String clientAddress = client.getInetAddress().getHostAddress();
-       System.out.println("Połączenie: " + clientAddress);
+        keyReader = new BufferedReader(new InputStreamReader(System.in));
 
-       BufferedReader input = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        writer = new PrintWriter(socket.getOutputStream(), true);
+        reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-       while ((data = input.readLine()) != null) {
-           System.out.println(data);
-       }
+        while (true) {
+            if((reciveMessage = reader.readLine()) != null) {
+                System.out.println(reciveMessage);
+            }
+            sendMessage = keyReader.readLine();
+            writer.println(sendMessage);
+            writer.flush();
+        }
    }
 
    public void start() {
