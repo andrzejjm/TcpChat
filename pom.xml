@@ -20,13 +20,12 @@
             <version>0.3m</version>
     </dependency>
 
-	<dependency>
-    <groupId>com.sample</groupId>
-    <artifactId>sample</artifactId>
-    <version>1.0</version>
-    <scope>system</scope>
-    <systemPath>${project.basedir}/pwr_msg_proto/include/java/pwr_msg/pwr_msg.jar</systemPath>
-</dependency>
+    <dependency>
+        <groupId>org.apache.ant</groupId>
+        <artifactId>ant</artifactId>
+        <version>1.8.2</version>
+    </dependency>
+
     </dependencies>
 
 </project>
