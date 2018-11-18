@@ -1,0 +1,3 @@
+[submodule "pwr_msg_proto"]
+	path = pwr_msg_proto
+	url = https://github.com/MichalGrzesiak/pwr_msg_proto
