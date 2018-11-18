@@ -1,12 +1,14 @@
 package pl.server;
 
-import org.korz.ant.ProtocTask;
+// import org.korz.ant.ProtocTask;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import pwr_msg.*;
 
 public class TcpServer {
+	public PwrMsg tepm;
    private ServerSocket serverSocket;
    private Socket socket;
 
