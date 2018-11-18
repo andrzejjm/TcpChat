@@ -1,13 +1,15 @@
 package pl.server;
 
-// import org.korz.ant.ProtocTask;
+import pwr_msg.PwrMsg;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import pwr_msg.*;
+
 
 public class TcpServer {
+    private PwrMsg temp;
+
    private ServerSocket serverSocket;
    private Socket socket;
 
@@ -24,7 +26,7 @@ public class TcpServer {
    }
 
    public void listen() throws Exception {
-	// temp = new PwrMsg();
+	    temp = new PwrMsg();
         socket = serverSocket.accept();
         System.out.println("Połączenie: " + socket.getInetAddress().getHostName());
 

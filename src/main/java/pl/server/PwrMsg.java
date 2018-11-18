@@ -4,7 +4,7 @@
 package pwr_msg;
 
 public final class PwrMsg {
-  private PwrMsg() {}
+  public PwrMsg() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
