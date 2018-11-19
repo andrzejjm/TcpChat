@@ -5,7 +5,7 @@ package pwr_msg;
 
 public final class PwrMsg {
   private PwrMsg() {}
-  private static void registerAllExtensions(
+  public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
 
@@ -48,14 +48,14 @@ public final class PwrMsg {
         getPasswordStringBytes();
 
     /**
-     * <code>optional string msg = 4;</code>
+     * <code>optional string login_of_second_client = 4;</code>
      */
-    java.lang.String getMsg();
+    java.lang.String getLoginOfSecondClient();
     /**
-     * <code>optional string msg = 4;</code>
+     * <code>optional string login_of_second_client = 4;</code>
      */
     com.google.protobuf.ByteString
-        getMsgBytes();
+        getLoginOfSecondClientBytes();
   }
   /**
    * Protobuf type {@code pwr_msg.clinet_to_server}
@@ -72,7 +72,7 @@ public final class PwrMsg {
       type_ = 0;
       loginString_ = "";
       passwordString_ = "";
-      msg_ = "";
+      loginOfSecondClient_ = "";
     }
 
     @java.lang.Override
@@ -121,7 +121,7 @@ public final class PwrMsg {
             case 34: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              msg_ = s;
+              loginOfSecondClient_ = s;
               break;
             }
           }
@@ -164,6 +164,10 @@ public final class PwrMsg {
        * <code>connect_to_second_client = 2;</code>
        */
       connect_to_second_client(2),
+      /**
+       * <code>logout_request = 3;</code>
+       */
+      logout_request(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -179,6 +183,10 @@ public final class PwrMsg {
        * <code>connect_to_second_client = 2;</code>
        */
       public static final int connect_to_second_client_VALUE = 2;
+      /**
+       * <code>logout_request = 3;</code>
+       */
+      public static final int logout_request_VALUE = 3;
 
 
       public final int getNumber() {
@@ -202,6 +210,7 @@ public final class PwrMsg {
           case 0: return registration;
           case 1: return login;
           case 2: return connect_to_second_client;
+          case 3: return logout_request;
           default: return null;
         }
       }
@@ -338,34 +347,34 @@ public final class PwrMsg {
       }
     }
 
-    public static final int MSG_FIELD_NUMBER = 4;
-    private volatile java.lang.Object msg_;
+    public static final int LOGIN_OF_SECOND_CLIENT_FIELD_NUMBER = 4;
+    private volatile java.lang.Object loginOfSecondClient_;
     /**
-     * <code>optional string msg = 4;</code>
+     * <code>optional string login_of_second_client = 4;</code>
      */
-    public java.lang.String getMsg() {
-      java.lang.Object ref = msg_;
+    public java.lang.String getLoginOfSecondClient() {
+      java.lang.Object ref = loginOfSecondClient_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        msg_ = s;
+        loginOfSecondClient_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string msg = 4;</code>
+     * <code>optional string login_of_second_client = 4;</code>
      */
     public com.google.protobuf.ByteString
-        getMsgBytes() {
-      java.lang.Object ref = msg_;
+        getLoginOfSecondClientBytes() {
+      java.lang.Object ref = loginOfSecondClient_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        msg_ = b;
+        loginOfSecondClient_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -393,8 +402,8 @@ public final class PwrMsg {
       if (!getPasswordStringBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, passwordString_);
       }
-      if (!getMsgBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, msg_);
+      if (!getLoginOfSecondClientBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, loginOfSecondClient_);
       }
     }
 
@@ -413,8 +422,8 @@ public final class PwrMsg {
       if (!getPasswordStringBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, passwordString_);
       }
-      if (!getMsgBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, msg_);
+      if (!getLoginOfSecondClientBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, loginOfSecondClient_);
       }
       memoizedSize = size;
       return size;
@@ -437,8 +446,8 @@ public final class PwrMsg {
           .equals(other.getLoginString());
       result = result && getPasswordString()
           .equals(other.getPasswordString());
-      result = result && getMsg()
-          .equals(other.getMsg());
+      result = result && getLoginOfSecondClient()
+          .equals(other.getLoginOfSecondClient());
       return result;
     }
 
@@ -455,8 +464,8 @@ public final class PwrMsg {
       hash = (53 * hash) + getLoginString().hashCode();
       hash = (37 * hash) + PASSWORD_STRING_FIELD_NUMBER;
       hash = (53 * hash) + getPasswordString().hashCode();
-      hash = (37 * hash) + MSG_FIELD_NUMBER;
-      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + LOGIN_OF_SECOND_CLIENT_FIELD_NUMBER;
+      hash = (53 * hash) + getLoginOfSecondClient().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -581,7 +590,7 @@ public final class PwrMsg {
 
         passwordString_ = "";
 
-        msg_ = "";
+        loginOfSecondClient_ = "";
 
         return this;
       }
@@ -608,7 +617,7 @@ public final class PwrMsg {
         result.type_ = type_;
         result.loginString_ = loginString_;
         result.passwordString_ = passwordString_;
-        result.msg_ = msg_;
+        result.loginOfSecondClient_ = loginOfSecondClient_;
         onBuilt();
         return result;
       }
@@ -661,8 +670,8 @@ public final class PwrMsg {
           passwordString_ = other.passwordString_;
           onChanged();
         }
-        if (!other.getMsg().isEmpty()) {
-          msg_ = other.msg_;
+        if (!other.getLoginOfSecondClient().isEmpty()) {
+          loginOfSecondClient_ = other.loginOfSecondClient_;
           onChanged();
         }
         onChanged();
@@ -873,71 +882,71 @@ public final class PwrMsg {
         return this;
       }
 
-      private java.lang.Object msg_ = "";
+      private java.lang.Object loginOfSecondClient_ = "";
       /**
-       * <code>optional string msg = 4;</code>
+       * <code>optional string login_of_second_client = 4;</code>
        */
-      public java.lang.String getMsg() {
-        java.lang.Object ref = msg_;
+      public java.lang.String getLoginOfSecondClient() {
+        java.lang.Object ref = loginOfSecondClient_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          msg_ = s;
+          loginOfSecondClient_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string msg = 4;</code>
+       * <code>optional string login_of_second_client = 4;</code>
        */
       public com.google.protobuf.ByteString
-          getMsgBytes() {
-        java.lang.Object ref = msg_;
+          getLoginOfSecondClientBytes() {
+        java.lang.Object ref = loginOfSecondClient_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          msg_ = b;
+          loginOfSecondClient_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string msg = 4;</code>
+       * <code>optional string login_of_second_client = 4;</code>
        */
-      public Builder setMsg(
+      public Builder setLoginOfSecondClient(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        msg_ = value;
+        loginOfSecondClient_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string msg = 4;</code>
+       * <code>optional string login_of_second_client = 4;</code>
        */
-      public Builder clearMsg() {
+      public Builder clearLoginOfSecondClient() {
         
-        msg_ = getDefaultInstance().getMsg();
+        loginOfSecondClient_ = getDefaultInstance().getLoginOfSecondClient();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string msg = 4;</code>
+       * <code>optional string login_of_second_client = 4;</code>
        */
-      public Builder setMsgBytes(
+      public Builder setLoginOfSecondClientBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        msg_ = value;
+        loginOfSecondClient_ = value;
         onChanged();
         return this;
       }
@@ -1117,6 +1126,10 @@ public final class PwrMsg {
        * <code>connect_to_second_client_ack = 2;</code>
        */
       connect_to_second_client_ack(2),
+      /**
+       * <code>logout_request_ack = 3;</code>
+       */
+      logout_request_ack(3),
       UNRECOGNIZED(-1),
       ;
 
@@ -1132,6 +1145,10 @@ public final class PwrMsg {
        * <code>connect_to_second_client_ack = 2;</code>
        */
       public static final int connect_to_second_client_ack_VALUE = 2;
+      /**
+       * <code>logout_request_ack = 3;</code>
+       */
+      public static final int logout_request_ack_VALUE = 3;
 
 
       public final int getNumber() {
@@ -1155,6 +1172,7 @@ public final class PwrMsg {
           case 0: return registration_ack;
           case 1: return login_ack;
           case 2: return connect_to_second_client_ack;
+          case 3: return logout_request_ack;
           default: return null;
         }
       }
@@ -1756,6 +1774,646 @@ public final class PwrMsg {
 
   }
 
+  public interface client_to_clientOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:pwr_msg.client_to_client)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string name_of_sender = 1;</code>
+     */
+    java.lang.String getNameOfSender();
+    /**
+     * <code>optional string name_of_sender = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameOfSenderBytes();
+
+    /**
+     * <code>optional string msg_content = 2;</code>
+     */
+    java.lang.String getMsgContent();
+    /**
+     * <code>optional string msg_content = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getMsgContentBytes();
+  }
+  /**
+   * Protobuf type {@code pwr_msg.client_to_client}
+   */
+  public  static final class client_to_client extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:pwr_msg.client_to_client)
+      client_to_clientOrBuilder {
+    // Use client_to_client.newBuilder() to construct.
+    private client_to_client(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private client_to_client() {
+      nameOfSender_ = "";
+      msgContent_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private client_to_client(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nameOfSender_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              msgContent_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return pwr_msg.PwrMsg.internal_static_pwr_msg_client_to_client_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return pwr_msg.PwrMsg.internal_static_pwr_msg_client_to_client_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              pwr_msg.PwrMsg.client_to_client.class, pwr_msg.PwrMsg.client_to_client.Builder.class);
+    }
+
+    public static final int NAME_OF_SENDER_FIELD_NUMBER = 1;
+    private volatile java.lang.Object nameOfSender_;
+    /**
+     * <code>optional string name_of_sender = 1;</code>
+     */
+    public java.lang.String getNameOfSender() {
+      java.lang.Object ref = nameOfSender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nameOfSender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name_of_sender = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameOfSenderBytes() {
+      java.lang.Object ref = nameOfSender_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nameOfSender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MSG_CONTENT_FIELD_NUMBER = 2;
+    private volatile java.lang.Object msgContent_;
+    /**
+     * <code>optional string msg_content = 2;</code>
+     */
+    public java.lang.String getMsgContent() {
+      java.lang.Object ref = msgContent_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        msgContent_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string msg_content = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMsgContentBytes() {
+      java.lang.Object ref = msgContent_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msgContent_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameOfSenderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nameOfSender_);
+      }
+      if (!getMsgContentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msgContent_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameOfSenderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nameOfSender_);
+      }
+      if (!getMsgContentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msgContent_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof pwr_msg.PwrMsg.client_to_client)) {
+        return super.equals(obj);
+      }
+      pwr_msg.PwrMsg.client_to_client other = (pwr_msg.PwrMsg.client_to_client) obj;
+
+      boolean result = true;
+      result = result && getNameOfSender()
+          .equals(other.getNameOfSender());
+      result = result && getMsgContent()
+          .equals(other.getMsgContent());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + NAME_OF_SENDER_FIELD_NUMBER;
+      hash = (53 * hash) + getNameOfSender().hashCode();
+      hash = (37 * hash) + MSG_CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getMsgContent().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static pwr_msg.PwrMsg.client_to_client parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pwr_msg.PwrMsg.client_to_client parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pwr_msg.PwrMsg.client_to_client parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static pwr_msg.PwrMsg.client_to_client parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static pwr_msg.PwrMsg.client_to_client parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pwr_msg.PwrMsg.client_to_client parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pwr_msg.PwrMsg.client_to_client parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static pwr_msg.PwrMsg.client_to_client parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static pwr_msg.PwrMsg.client_to_client parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static pwr_msg.PwrMsg.client_to_client parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(pwr_msg.PwrMsg.client_to_client prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code pwr_msg.client_to_client}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:pwr_msg.client_to_client)
+        pwr_msg.PwrMsg.client_to_clientOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return pwr_msg.PwrMsg.internal_static_pwr_msg_client_to_client_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return pwr_msg.PwrMsg.internal_static_pwr_msg_client_to_client_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                pwr_msg.PwrMsg.client_to_client.class, pwr_msg.PwrMsg.client_to_client.Builder.class);
+      }
+
+      // Construct using pwr_msg.PwrMsg.client_to_client.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        nameOfSender_ = "";
+
+        msgContent_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return pwr_msg.PwrMsg.internal_static_pwr_msg_client_to_client_descriptor;
+      }
+
+      public pwr_msg.PwrMsg.client_to_client getDefaultInstanceForType() {
+        return pwr_msg.PwrMsg.client_to_client.getDefaultInstance();
+      }
+
+      public pwr_msg.PwrMsg.client_to_client build() {
+        pwr_msg.PwrMsg.client_to_client result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public pwr_msg.PwrMsg.client_to_client buildPartial() {
+        pwr_msg.PwrMsg.client_to_client result = new pwr_msg.PwrMsg.client_to_client(this);
+        result.nameOfSender_ = nameOfSender_;
+        result.msgContent_ = msgContent_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof pwr_msg.PwrMsg.client_to_client) {
+          return mergeFrom((pwr_msg.PwrMsg.client_to_client)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(pwr_msg.PwrMsg.client_to_client other) {
+        if (other == pwr_msg.PwrMsg.client_to_client.getDefaultInstance()) return this;
+        if (!other.getNameOfSender().isEmpty()) {
+          nameOfSender_ = other.nameOfSender_;
+          onChanged();
+        }
+        if (!other.getMsgContent().isEmpty()) {
+          msgContent_ = other.msgContent_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        pwr_msg.PwrMsg.client_to_client parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (pwr_msg.PwrMsg.client_to_client) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object nameOfSender_ = "";
+      /**
+       * <code>optional string name_of_sender = 1;</code>
+       */
+      public java.lang.String getNameOfSender() {
+        java.lang.Object ref = nameOfSender_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nameOfSender_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name_of_sender = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameOfSenderBytes() {
+        java.lang.Object ref = nameOfSender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          nameOfSender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name_of_sender = 1;</code>
+       */
+      public Builder setNameOfSender(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        nameOfSender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name_of_sender = 1;</code>
+       */
+      public Builder clearNameOfSender() {
+        
+        nameOfSender_ = getDefaultInstance().getNameOfSender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name_of_sender = 1;</code>
+       */
+      public Builder setNameOfSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        nameOfSender_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object msgContent_ = "";
+      /**
+       * <code>optional string msg_content = 2;</code>
+       */
+      public java.lang.String getMsgContent() {
+        java.lang.Object ref = msgContent_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          msgContent_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string msg_content = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMsgContentBytes() {
+        java.lang.Object ref = msgContent_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msgContent_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string msg_content = 2;</code>
+       */
+      public Builder setMsgContent(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msgContent_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string msg_content = 2;</code>
+       */
+      public Builder clearMsgContent() {
+        
+        msgContent_ = getDefaultInstance().getMsgContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string msg_content = 2;</code>
+       */
+      public Builder setMsgContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msgContent_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:pwr_msg.client_to_client)
+    }
+
+    // @@protoc_insertion_point(class_scope:pwr_msg.client_to_client)
+    private static final pwr_msg.PwrMsg.client_to_client DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new pwr_msg.PwrMsg.client_to_client();
+    }
+
+    public static pwr_msg.PwrMsg.client_to_client getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<client_to_client>
+        PARSER = new com.google.protobuf.AbstractParser<client_to_client>() {
+      public client_to_client parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new client_to_client(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<client_to_client> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<client_to_client> getParserForType() {
+      return PARSER;
+    }
+
+    public pwr_msg.PwrMsg.client_to_client getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_pwr_msg_clinet_to_server_descriptor;
   private static final 
@@ -1766,6 +2424,11 @@ public final class PwrMsg {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_pwr_msg_server_to_clinet_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_pwr_msg_client_to_client_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_pwr_msg_client_to_client_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1775,18 +2438,21 @@ public final class PwrMsg {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\rpwr_msg.proto\022\007pwr_msg\"\325\001\n\020clinet_to_s" +
+      "\n\rpwr_msg.proto\022\007pwr_msg\"\374\001\n\020clinet_to_s" +
       "erver\0227\n\004type\030\001 \001(\0162).pwr_msg.clinet_to_" +
       "server.type_of_massage\022\024\n\014login_string\030\002" +
-      " \001(\t\022\027\n\017password_string\030\003 \001(\t\022\013\n\003msg\030\004 \001" +
-      "(\t\"L\n\017type_of_massage\022\020\n\014registration\020\000\022" +
-      "\t\n\005login\020\001\022\034\n\030connect_to_second_client\020\002" +
-      "\"\325\001\n\020server_to_clinet\0227\n\004type\030\001 \001(\0162).pw" +
-      "r_msg.server_to_clinet.type_of_massage\022\024" +
-      "\n\014is_succesful\030\002 \001(\010\022\030\n\020second_clinet_ip" +
-      "\030\003 \001(\t\"X\n\017type_of_massage\022\024\n\020registratio",
-      "n_ack\020\000\022\r\n\tlogin_ack\020\001\022 \n\034connect_to_sec" +
-      "ond_client_ack\020\002b\006proto3"
+      " \001(\t\022\027\n\017password_string\030\003 \001(\t\022\036\n\026login_o" +
+      "f_second_client\030\004 \001(\t\"`\n\017type_of_massage" +
+      "\022\020\n\014registration\020\000\022\t\n\005login\020\001\022\034\n\030connect" +
+      "_to_second_client\020\002\022\022\n\016logout_request\020\003\"" +
+      "\355\001\n\020server_to_clinet\0227\n\004type\030\001 \001(\0162).pwr" +
+      "_msg.server_to_clinet.type_of_massage\022\024\n" +
+      "\014is_succesful\030\002 \001(\010\022\030\n\020second_clinet_ip\030",
+      "\003 \001(\t\"p\n\017type_of_massage\022\024\n\020registration" +
+      "_ack\020\000\022\r\n\tlogin_ack\020\001\022 \n\034connect_to_seco" +
+      "nd_client_ack\020\002\022\026\n\022logout_request_ack\020\003\"" +
+      "?\n\020client_to_client\022\026\n\016name_of_sender\030\001 " +
+      "\001(\t\022\023\n\013msg_content\030\002 \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1805,13 +2471,19 @@ public final class PwrMsg {
     internal_static_pwr_msg_clinet_to_server_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pwr_msg_clinet_to_server_descriptor,
-        new java.lang.String[] { "Type", "LoginString", "PasswordString", "Msg", });
+        new java.lang.String[] { "Type", "LoginString", "PasswordString", "LoginOfSecondClient", });
     internal_static_pwr_msg_server_to_clinet_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_pwr_msg_server_to_clinet_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pwr_msg_server_to_clinet_descriptor,
         new java.lang.String[] { "Type", "IsSuccesful", "SecondClinetIp", });
+    internal_static_pwr_msg_client_to_client_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_pwr_msg_client_to_client_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_pwr_msg_client_to_client_descriptor,
+        new java.lang.String[] { "NameOfSender", "MsgContent", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
