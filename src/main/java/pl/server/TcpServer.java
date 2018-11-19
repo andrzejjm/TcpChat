@@ -37,43 +37,49 @@ public class TcpServer {
         System.out.println("Połączenie: " + socket.getInetAddress().getHostName());
 
         int length = inputStream.readInt();
-        System.out.println(length);
         byte[] message = new byte[length];
 
         if(length>0) {
             inputStream.read(message, 0, message.length); // read the message
-            for(int i=0; i < length; i++) {
-                System.out.print(message[i] + " ");
-            }
             toGet = PwrMsg.clinet_to_server.parseFrom(message);
 
-            System.out.println(toGet.getTypeValue() + " " + toGet.getPasswordString() + " " + toGet.getLoginString());
+            System.out.println("Parametry zapytania: " + toGet.getTypeValue() + " " + toGet.getPasswordString() + " " + toGet.getLoginString());
 
             switch (toGet.getTypeValue()) {
-                case 0: {
+                case 0: { //rejestrujemy
+                    boolean dbResponse;
                     try {
-                        dbController.register(toGet.getLoginString(), toGet.getLoginString());
-                        toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(0).setIsSuccesful(true).build();
+                        dbResponse = dbController.register(toGet.getLoginString(), toGet.getPasswordString());
                     } catch (SQLException e) {
-                        System.out.println("ERRR"); //tu coś nie gra bo nie tworzy się toSend
-                        toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(0).setIsSuccesful(false).build();
-                        System.out.println("ERR2");
-                        e.toString();
+                        dbResponse = false;
+                        System.out.println("Prawdopodobnie użytkownik istnieje. Albo inny problem z bazą xD");
                     }
-                    break;
+
+                    toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(0).setIsSuccesful(dbResponse).build(); //to nie działa
                 }
-                case 1:
-                    break;
-                case 3:
-                    break;
+                break;
+                case 1: { //logujemy
+                    boolean dbResponse;
+
+                    try {
+                        dbResponse = dbController.login(toGet.getLoginString(), toGet.getPasswordString());
+                    } catch (SQLException e) {
+                        dbResponse = false;
+                        System.out.println("Jakiś błąd przy logowaniu");
+                    }
+
+                    toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(1).setIsSuccesful(dbResponse).build(); // to działa
+                }
+                break;
+                case 3: { //getIp
+
+                }
+                break;
                 default:
                     break;
             }
 
             byte[] toClientResponse = toSend.toByteArray();
-            for(int i=0; i < toClientResponse.length; i++) {
-                System.out.print(toClientResponse[i] + " ");
-            }
 
             outputStream.flush();
             outputStream.writeInt(toClientResponse.length);

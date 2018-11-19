@@ -1,6 +1,7 @@
 package pl.server;
 
 import org.mindrot.jbcrypt.BCrypt;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.sql.*;
 
@@ -26,8 +27,7 @@ public class DbController {
     }
 
     public boolean register(String login, String password) throws SQLException {
-        System.out.println("Rejestruję..");
-
+        System.out.println(">Rejestracja...");
         String SQLline = "INSERT INTO users (Login, Password) VALUES (?, ?);";
 
         PreparedStatement preparedStatement = connection.prepareStatement(SQLline);
@@ -40,6 +40,7 @@ public class DbController {
     }
 
     public boolean login(String login, String password) throws SQLException{
+        System.out.println(">Logowanie...");
         String SQLline = "SELECT Password FROM users WHERE Login LIKE ?;";
 
         PreparedStatement preparedStatement = connection.prepareStatement(SQLline);
@@ -60,6 +61,7 @@ public class DbController {
     }
 
     private String hashPassword(String password) {
+        System.out.println(password + ".");
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 }
