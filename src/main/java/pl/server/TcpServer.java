@@ -50,7 +50,8 @@ public class TcpServer {
             System.out.println(toGet.getTypeValue() + " " + toGet.getPasswordString() + " " + toGet.getLoginString());
 
             switch (toGet.getTypeValue()) {
-                case 0: {
+                case 0:// registration 
+			{
                     try {
                         dbController.register(toGet.getLoginString(), toGet.getLoginString());
                         toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(0).setIsSuccesful(true).build();
@@ -62,9 +63,36 @@ public class TcpServer {
                     }
                     break;
                 }
-                case 1:
-                    break;
-                case 3:
+                case 1: //login
+			//todo make it real check
+			boolean isRegistered = true;
+			boolean isPasswordCorrect = true;
+
+			if(isRegistered && isPasswordCorrect)
+			{
+				ipMap.put(toGet.getLoginString(),socket.getInetAddress().toString());
+                        	toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(1).setIsSuccesful(true).build();
+			}
+
+			else {
+
+                        	toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(1).setIsSuccesful(false).build();
+			}break;
+		case 2: // connect to second client
+
+			//check if second client is logged 
+			String key = toGet.getLoginOfSecondClient();
+			String second_client_ip = ipMap.get(key);
+			if (second_client_ip != null) {
+                        	toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(2).setIsSuccesful(true).setSecondClientIp(second_client_ip).build();
+			} else {
+
+                        toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(2).setIsSuccesful(false).setSecondClientIp(second_client_ip).build();
+			}break;
+                case 3: //logout request
+
+	
+
                     break;
                 default:
                     break;
