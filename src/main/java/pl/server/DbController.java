@@ -25,7 +25,9 @@ public class DbController {
         }
     }
 
-    public void register(String login, String password) throws SQLException {
+    public boolean register(String login, String password) throws SQLException {
+        System.out.println("Rejestruję..");
+
         String SQLline = "INSERT INTO users (Login, Password) VALUES (?, ?);";
 
         PreparedStatement preparedStatement = connection.prepareStatement(SQLline);
@@ -33,6 +35,8 @@ public class DbController {
         preparedStatement.setString(2, hashPassword(password));
 
         preparedStatement.executeUpdate();
+
+        return true;
     }
 
     public boolean login(String login, String password) throws SQLException{

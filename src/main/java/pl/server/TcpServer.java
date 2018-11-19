@@ -5,50 +5,86 @@ import pwr_msg.PwrMsg;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class TcpServer {
-    private PwrMsg temp;
+    private PwrMsg.server_to_clinet toSend;
+    private PwrMsg.clinet_to_server toGet;
 
-   private ServerSocket serverSocket;
-   private Socket socket;
+    private ServerSocket serverSocket;
+    private Socket socket;
 
-   private BufferedReader keyReader;
+    private DataInputStream inputStream;
+    private DataOutputStream outputStream;
 
-   private PrintWriter writer;
-   private BufferedReader reader;
+    private DbController dbController;
 
-   private String reciveMessage;
-   private String sendMessage;
+    private Map<String, String> ipMap;
 
    public TcpServer() throws  Exception {
         serverSocket = new ServerSocket(8085);
+        ipMap = new HashMap<String, String>();
+        dbController = new DbController();
    }
 
-   public void listen() throws Exception {
-	    temp = new PwrMsg();
+   public void listen() throws IOException {
         socket = serverSocket.accept();
+        inputStream = new DataInputStream(socket.getInputStream());
+        outputStream = new DataOutputStream(socket.getOutputStream());
         System.out.println("Połączenie: " + socket.getInetAddress().getHostName());
 
-        keyReader = new BufferedReader(new InputStreamReader(System.in));
+        int length = inputStream.readInt();
+        System.out.println(length);
+        byte[] message = new byte[length];
 
-        writer = new PrintWriter(socket.getOutputStream(), true);
-        reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-
-        while (true) {
-            if((reciveMessage = reader.readLine()) != null) {
-                System.out.println(reciveMessage);
+        if(length>0) {
+            inputStream.read(message, 0, message.length); // read the message
+            for(int i=0; i < length; i++) {
+                System.out.print(message[i] + " ");
             }
-            sendMessage = keyReader.readLine();
-            writer.println(sendMessage);
-            writer.flush();
+            toGet = PwrMsg.clinet_to_server.parseFrom(message);
+
+            System.out.println(toGet.getTypeValue() + " " + toGet.getPasswordString() + " " + toGet.getLoginString());
+
+            switch (toGet.getTypeValue()) {
+                case 0: {
+                    try {
+                        dbController.register(toGet.getLoginString(), toGet.getLoginString());
+                        toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(0).setIsSuccesful(true).build();
+                    } catch (SQLException e) {
+                        System.out.println("ERRR"); //tu coś nie gra bo nie tworzy się toSend
+                        toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(0).setIsSuccesful(false).build();
+                        System.out.println("ERR2");
+                        e.toString();
+                    }
+                    break;
+                }
+                case 1:
+                    break;
+                case 3:
+                    break;
+                default:
+                    break;
+            }
+
+            byte[] toClientResponse = toSend.toByteArray();
+            for(int i=0; i < toClientResponse.length; i++) {
+                System.out.print(toClientResponse[i] + " ");
+            }
+
+            outputStream.flush();
+            outputStream.writeInt(toClientResponse.length);
+            outputStream.write(toClientResponse);
         }
-   }
+    }
 
    public void start() {
        try {
            listen();
-       } catch (Exception e) {
+       } catch (IOException e) {
            e.printStackTrace();
        }
    }
