@@ -61,7 +61,6 @@ public class DbController {
     }
 
     private String hashPassword(String password) {
-        System.out.println(password + ".");
         return BCrypt.hashpw(password, BCrypt.gensalt());
     }
 }
