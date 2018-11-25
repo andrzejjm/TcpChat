@@ -73,6 +73,7 @@ class DeamonThread implements Runnable {
 				result[i]= (byte)(s ^ bytes[i]);
 				i++;
 			}
+			i--;
 		}
 	    }
 	   return result; 
