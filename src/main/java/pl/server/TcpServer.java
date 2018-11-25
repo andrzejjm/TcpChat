@@ -120,6 +120,7 @@ class DeamonThread implements Runnable {
                 }
 
                 byte[] toClientResponse = toSend.toByteArray();
+		toClientResponse = encodeOrDecodeMsg(toClientResponse); //encode (xor) message with secret
 
                 outputStream.flush();
                 outputStream.writeInt(toClientResponse.length);
