@@ -49,6 +49,7 @@ public class TcpServer {
 }
 
 class DeamonThread implements Runnable {
+    private String secret = "BSIUIPANY123";
     DataInputStream inputStream;
     DataOutputStream outputStream;
     Map<String, String> ipMap;
@@ -61,6 +62,22 @@ class DeamonThread implements Runnable {
         this.socket = socket;
     }
 
+  public byte[] encodeOrDecodeMsg(byte[] bytes){
+	    int size = bytes.length;
+	    byte [] result= new byte[size];
+	    for (int i = 0; i< size; i++)
+	    {
+		for ( char s : secret.toCharArray()) {
+			if(i<size)
+			{
+				result[i]= (byte)(s ^ bytes[i]);
+				i++;
+			}
+			i--;
+		}
+	    }
+	   return result; 
+    }
 
     @Override
     public void run() {
@@ -74,6 +91,7 @@ class DeamonThread implements Runnable {
 
             if (length > 0) {
                 inputStream.read(message, 0, message.length); // read the message
+		message = encodeOrDecodeMsg(message);         // decode(xor) all bytes with secret
                 toGet = PwrMsg.clinet_to_server.parseFrom(message);
 
                 System.out.println("Parametry zapytania: " + toGet.getTypeValue() + " " + toGet.getPasswordString() + " " + toGet.getLoginString());
@@ -103,6 +121,7 @@ class DeamonThread implements Runnable {
                 }
 
                 byte[] toClientResponse = toSend.toByteArray();
+		toClientResponse = encodeOrDecodeMsg(toClientResponse); //encode (xor) message with secret
 
                 outputStream.flush();
                 outputStream.writeInt(toClientResponse.length);
