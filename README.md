@@ -11,7 +11,7 @@ All massages (server-to-client, client-to-server, client-client) are defined in 
 <br>
 <br>
 <b>Server port: 8085</b>
-<br><b>Fixed address IP recommended.
+<br><b>Fixed address IP recommended.</b>
 ## pwr_msg_proto directory 
 pwr_msg_proto is git submodule (https://github.com/MichalGrzesiak/pwr_msg_proto)
 that contains proto definitions of sent messages.
