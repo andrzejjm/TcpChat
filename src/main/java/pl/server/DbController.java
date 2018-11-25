@@ -1,7 +1,6 @@
 package pl.server;
 
 import org.mindrot.jbcrypt.BCrypt;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.sql.*;
 

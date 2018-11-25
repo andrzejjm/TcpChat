@@ -101,7 +101,16 @@ public class TcpServer {
                             }
                             break;
                             case 3: { //wyloguj
-
+                                try {
+                                    synchronized (ipMap) {
+                                        System.out.println("Usuwam IP " + toGet.getLoginString());
+                                        ipMap.remove(toGet.getLoginString());
+                                        System.out.println("Mapa IP: " + ipMap);
+                                    }
+                                    toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(3).setIsSuccesful(true).build();
+                                } catch (Exception e) {
+                                    toSend = PwrMsg.server_to_clinet.newBuilder().setTypeValue(3).setIsSuccesful(false).build();
+                                }
                             }
                             default:
                                 break;
