@@ -17,7 +17,7 @@ pwr_msg_proto is git submodule (https://github.com/MichalGrzesiak/pwr_msg_proto)
 that contains proto definitions of sent messages.
 To pull that repository run
 ```
-git submodule --init --recursive
+git submodule update --init --recursive
 ```
 
 # Prerequisites

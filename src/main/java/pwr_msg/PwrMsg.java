@@ -19,40 +19,40 @@ public final class PwrMsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
+     * <code>.pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
      */
     int getTypeValue();
     /**
-     * <code>optional .pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
+     * <code>.pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
      */
     pwr_msg.PwrMsg.clinet_to_server.type_of_massage getType();
 
     /**
-     * <code>optional string login_string = 2;</code>
+     * <code>string login_string = 2;</code>
      */
     java.lang.String getLoginString();
     /**
-     * <code>optional string login_string = 2;</code>
+     * <code>string login_string = 2;</code>
      */
     com.google.protobuf.ByteString
         getLoginStringBytes();
 
     /**
-     * <code>optional string password_string = 3;</code>
+     * <code>string password_string = 3;</code>
      */
     java.lang.String getPasswordString();
     /**
-     * <code>optional string password_string = 3;</code>
+     * <code>string password_string = 3;</code>
      */
     com.google.protobuf.ByteString
         getPasswordStringBytes();
 
     /**
-     * <code>optional string login_of_second_client = 4;</code>
+     * <code>string login_of_second_client = 4;</code>
      */
     java.lang.String getLoginOfSecondClient();
     /**
-     * <code>optional string login_of_second_client = 4;</code>
+     * <code>string login_of_second_client = 4;</code>
      */
     com.google.protobuf.ByteString
         getLoginOfSecondClientBytes();
@@ -266,13 +266,13 @@ public final class PwrMsg {
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
     /**
-     * <code>optional .pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
+     * <code>.pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
      */
     public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>optional .pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
+     * <code>.pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
      */
     public pwr_msg.PwrMsg.clinet_to_server.type_of_massage getType() {
       pwr_msg.PwrMsg.clinet_to_server.type_of_massage result = pwr_msg.PwrMsg.clinet_to_server.type_of_massage.valueOf(type_);
@@ -282,7 +282,7 @@ public final class PwrMsg {
     public static final int LOGIN_STRING_FIELD_NUMBER = 2;
     private volatile java.lang.Object loginString_;
     /**
-     * <code>optional string login_string = 2;</code>
+     * <code>string login_string = 2;</code>
      */
     public java.lang.String getLoginString() {
       java.lang.Object ref = loginString_;
@@ -297,7 +297,7 @@ public final class PwrMsg {
       }
     }
     /**
-     * <code>optional string login_string = 2;</code>
+     * <code>string login_string = 2;</code>
      */
     public com.google.protobuf.ByteString
         getLoginStringBytes() {
@@ -316,7 +316,7 @@ public final class PwrMsg {
     public static final int PASSWORD_STRING_FIELD_NUMBER = 3;
     private volatile java.lang.Object passwordString_;
     /**
-     * <code>optional string password_string = 3;</code>
+     * <code>string password_string = 3;</code>
      */
     public java.lang.String getPasswordString() {
       java.lang.Object ref = passwordString_;
@@ -331,7 +331,7 @@ public final class PwrMsg {
       }
     }
     /**
-     * <code>optional string password_string = 3;</code>
+     * <code>string password_string = 3;</code>
      */
     public com.google.protobuf.ByteString
         getPasswordStringBytes() {
@@ -350,7 +350,7 @@ public final class PwrMsg {
     public static final int LOGIN_OF_SECOND_CLIENT_FIELD_NUMBER = 4;
     private volatile java.lang.Object loginOfSecondClient_;
     /**
-     * <code>optional string login_of_second_client = 4;</code>
+     * <code>string login_of_second_client = 4;</code>
      */
     public java.lang.String getLoginOfSecondClient() {
       java.lang.Object ref = loginOfSecondClient_;
@@ -365,7 +365,7 @@ public final class PwrMsg {
       }
     }
     /**
-     * <code>optional string login_of_second_client = 4;</code>
+     * <code>string login_of_second_client = 4;</code>
      */
     public com.google.protobuf.ByteString
         getLoginOfSecondClientBytes() {
@@ -457,7 +457,7 @@ public final class PwrMsg {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       hash = (37 * hash) + LOGIN_STRING_FIELD_NUMBER;
@@ -702,13 +702,13 @@ public final class PwrMsg {
 
       private int type_ = 0;
       /**
-       * <code>optional .pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
        */
       public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>optional .pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -716,14 +716,14 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional .pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
        */
       public pwr_msg.PwrMsg.clinet_to_server.type_of_massage getType() {
         pwr_msg.PwrMsg.clinet_to_server.type_of_massage result = pwr_msg.PwrMsg.clinet_to_server.type_of_massage.valueOf(type_);
         return result == null ? pwr_msg.PwrMsg.clinet_to_server.type_of_massage.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
        */
       public Builder setType(pwr_msg.PwrMsg.clinet_to_server.type_of_massage value) {
         if (value == null) {
@@ -735,7 +735,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional .pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.clinet_to_server.type_of_massage type = 1;</code>
        */
       public Builder clearType() {
         
@@ -746,7 +746,7 @@ public final class PwrMsg {
 
       private java.lang.Object loginString_ = "";
       /**
-       * <code>optional string login_string = 2;</code>
+       * <code>string login_string = 2;</code>
        */
       public java.lang.String getLoginString() {
         java.lang.Object ref = loginString_;
@@ -761,7 +761,7 @@ public final class PwrMsg {
         }
       }
       /**
-       * <code>optional string login_string = 2;</code>
+       * <code>string login_string = 2;</code>
        */
       public com.google.protobuf.ByteString
           getLoginStringBytes() {
@@ -777,7 +777,7 @@ public final class PwrMsg {
         }
       }
       /**
-       * <code>optional string login_string = 2;</code>
+       * <code>string login_string = 2;</code>
        */
       public Builder setLoginString(
           java.lang.String value) {
@@ -790,7 +790,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional string login_string = 2;</code>
+       * <code>string login_string = 2;</code>
        */
       public Builder clearLoginString() {
         
@@ -799,7 +799,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional string login_string = 2;</code>
+       * <code>string login_string = 2;</code>
        */
       public Builder setLoginStringBytes(
           com.google.protobuf.ByteString value) {
@@ -815,7 +815,7 @@ public final class PwrMsg {
 
       private java.lang.Object passwordString_ = "";
       /**
-       * <code>optional string password_string = 3;</code>
+       * <code>string password_string = 3;</code>
        */
       public java.lang.String getPasswordString() {
         java.lang.Object ref = passwordString_;
@@ -830,7 +830,7 @@ public final class PwrMsg {
         }
       }
       /**
-       * <code>optional string password_string = 3;</code>
+       * <code>string password_string = 3;</code>
        */
       public com.google.protobuf.ByteString
           getPasswordStringBytes() {
@@ -846,7 +846,7 @@ public final class PwrMsg {
         }
       }
       /**
-       * <code>optional string password_string = 3;</code>
+       * <code>string password_string = 3;</code>
        */
       public Builder setPasswordString(
           java.lang.String value) {
@@ -859,7 +859,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional string password_string = 3;</code>
+       * <code>string password_string = 3;</code>
        */
       public Builder clearPasswordString() {
         
@@ -868,7 +868,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional string password_string = 3;</code>
+       * <code>string password_string = 3;</code>
        */
       public Builder setPasswordStringBytes(
           com.google.protobuf.ByteString value) {
@@ -884,7 +884,7 @@ public final class PwrMsg {
 
       private java.lang.Object loginOfSecondClient_ = "";
       /**
-       * <code>optional string login_of_second_client = 4;</code>
+       * <code>string login_of_second_client = 4;</code>
        */
       public java.lang.String getLoginOfSecondClient() {
         java.lang.Object ref = loginOfSecondClient_;
@@ -899,7 +899,7 @@ public final class PwrMsg {
         }
       }
       /**
-       * <code>optional string login_of_second_client = 4;</code>
+       * <code>string login_of_second_client = 4;</code>
        */
       public com.google.protobuf.ByteString
           getLoginOfSecondClientBytes() {
@@ -915,7 +915,7 @@ public final class PwrMsg {
         }
       }
       /**
-       * <code>optional string login_of_second_client = 4;</code>
+       * <code>string login_of_second_client = 4;</code>
        */
       public Builder setLoginOfSecondClient(
           java.lang.String value) {
@@ -928,7 +928,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional string login_of_second_client = 4;</code>
+       * <code>string login_of_second_client = 4;</code>
        */
       public Builder clearLoginOfSecondClient() {
         
@@ -937,7 +937,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional string login_of_second_client = 4;</code>
+       * <code>string login_of_second_client = 4;</code>
        */
       public Builder setLoginOfSecondClientBytes(
           com.google.protobuf.ByteString value) {
@@ -1004,25 +1004,25 @@ public final class PwrMsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
+     * <code>.pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
      */
     int getTypeValue();
     /**
-     * <code>optional .pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
+     * <code>.pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
      */
     pwr_msg.PwrMsg.server_to_clinet.type_of_massage getType();
 
     /**
-     * <code>optional bool is_succesful = 2;</code>
+     * <code>bool is_succesful = 2;</code>
      */
     boolean getIsSuccesful();
 
     /**
-     * <code>optional string second_clinet_ip = 3;</code>
+     * <code>string second_clinet_ip = 3;</code>
      */
     java.lang.String getSecondClinetIp();
     /**
-     * <code>optional string second_clinet_ip = 3;</code>
+     * <code>string second_clinet_ip = 3;</code>
      */
     com.google.protobuf.ByteString
         getSecondClinetIpBytes();
@@ -1228,13 +1228,13 @@ public final class PwrMsg {
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
     /**
-     * <code>optional .pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
+     * <code>.pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
      */
     public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>optional .pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
+     * <code>.pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
      */
     public pwr_msg.PwrMsg.server_to_clinet.type_of_massage getType() {
       pwr_msg.PwrMsg.server_to_clinet.type_of_massage result = pwr_msg.PwrMsg.server_to_clinet.type_of_massage.valueOf(type_);
@@ -1244,7 +1244,7 @@ public final class PwrMsg {
     public static final int IS_SUCCESFUL_FIELD_NUMBER = 2;
     private boolean isSuccesful_;
     /**
-     * <code>optional bool is_succesful = 2;</code>
+     * <code>bool is_succesful = 2;</code>
      */
     public boolean getIsSuccesful() {
       return isSuccesful_;
@@ -1253,7 +1253,7 @@ public final class PwrMsg {
     public static final int SECOND_CLINET_IP_FIELD_NUMBER = 3;
     private volatile java.lang.Object secondClinetIp_;
     /**
-     * <code>optional string second_clinet_ip = 3;</code>
+     * <code>string second_clinet_ip = 3;</code>
      */
     public java.lang.String getSecondClinetIp() {
       java.lang.Object ref = secondClinetIp_;
@@ -1268,7 +1268,7 @@ public final class PwrMsg {
       }
     }
     /**
-     * <code>optional string second_clinet_ip = 3;</code>
+     * <code>string second_clinet_ip = 3;</code>
      */
     public com.google.protobuf.ByteString
         getSecondClinetIpBytes() {
@@ -1353,7 +1353,7 @@ public final class PwrMsg {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
       hash = (37 * hash) + IS_SUCCESFUL_FIELD_NUMBER;
@@ -1589,13 +1589,13 @@ public final class PwrMsg {
 
       private int type_ = 0;
       /**
-       * <code>optional .pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
        */
       public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>optional .pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -1603,14 +1603,14 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional .pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
        */
       public pwr_msg.PwrMsg.server_to_clinet.type_of_massage getType() {
         pwr_msg.PwrMsg.server_to_clinet.type_of_massage result = pwr_msg.PwrMsg.server_to_clinet.type_of_massage.valueOf(type_);
         return result == null ? pwr_msg.PwrMsg.server_to_clinet.type_of_massage.UNRECOGNIZED : result;
       }
       /**
-       * <code>optional .pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
        */
       public Builder setType(pwr_msg.PwrMsg.server_to_clinet.type_of_massage value) {
         if (value == null) {
@@ -1622,7 +1622,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional .pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
+       * <code>.pwr_msg.server_to_clinet.type_of_massage type = 1;</code>
        */
       public Builder clearType() {
         
@@ -1633,13 +1633,13 @@ public final class PwrMsg {
 
       private boolean isSuccesful_ ;
       /**
-       * <code>optional bool is_succesful = 2;</code>
+       * <code>bool is_succesful = 2;</code>
        */
       public boolean getIsSuccesful() {
         return isSuccesful_;
       }
       /**
-       * <code>optional bool is_succesful = 2;</code>
+       * <code>bool is_succesful = 2;</code>
        */
       public Builder setIsSuccesful(boolean value) {
         
@@ -1648,7 +1648,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional bool is_succesful = 2;</code>
+       * <code>bool is_succesful = 2;</code>
        */
       public Builder clearIsSuccesful() {
         
@@ -1659,7 +1659,7 @@ public final class PwrMsg {
 
       private java.lang.Object secondClinetIp_ = "";
       /**
-       * <code>optional string second_clinet_ip = 3;</code>
+       * <code>string second_clinet_ip = 3;</code>
        */
       public java.lang.String getSecondClinetIp() {
         java.lang.Object ref = secondClinetIp_;
@@ -1674,7 +1674,7 @@ public final class PwrMsg {
         }
       }
       /**
-       * <code>optional string second_clinet_ip = 3;</code>
+       * <code>string second_clinet_ip = 3;</code>
        */
       public com.google.protobuf.ByteString
           getSecondClinetIpBytes() {
@@ -1690,7 +1690,7 @@ public final class PwrMsg {
         }
       }
       /**
-       * <code>optional string second_clinet_ip = 3;</code>
+       * <code>string second_clinet_ip = 3;</code>
        */
       public Builder setSecondClinetIp(
           java.lang.String value) {
@@ -1703,7 +1703,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional string second_clinet_ip = 3;</code>
+       * <code>string second_clinet_ip = 3;</code>
        */
       public Builder clearSecondClinetIp() {
         
@@ -1712,7 +1712,7 @@ public final class PwrMsg {
         return this;
       }
       /**
-       * <code>optional string second_clinet_ip = 3;</code>
+       * <code>string second_clinet_ip = 3;</code>
        */
       public Builder setSecondClinetIpBytes(
           com.google.protobuf.ByteString value) {
@@ -1779,24 +1779,34 @@ public final class PwrMsg {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string name_of_sender = 1;</code>
+     * <code>string msg = 1;</code>
      */
-    java.lang.String getNameOfSender();
+    java.lang.String getMsg();
     /**
-     * <code>optional string name_of_sender = 1;</code>
+     * <code>string msg = 1;</code>
      */
     com.google.protobuf.ByteString
-        getNameOfSenderBytes();
+        getMsgBytes();
 
     /**
-     * <code>optional string msg_content = 2;</code>
+     * <code>string to = 2;</code>
      */
-    java.lang.String getMsgContent();
+    java.lang.String getTo();
     /**
-     * <code>optional string msg_content = 2;</code>
+     * <code>string to = 2;</code>
      */
     com.google.protobuf.ByteString
-        getMsgContentBytes();
+        getToBytes();
+
+    /**
+     * <code>string from = 3;</code>
+     */
+    java.lang.String getFrom();
+    /**
+     * <code>string from = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getFromBytes();
   }
   /**
    * Protobuf type {@code pwr_msg.client_to_client}
@@ -1810,8 +1820,9 @@ public final class PwrMsg {
       super(builder);
     }
     private client_to_client() {
-      nameOfSender_ = "";
-      msgContent_ = "";
+      msg_ = "";
+      to_ = "";
+      from_ = "";
     }
 
     @java.lang.Override
@@ -1842,13 +1853,19 @@ public final class PwrMsg {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              nameOfSender_ = s;
+              msg_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              msgContent_ = s;
+              to_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              from_ = s;
               break;
             }
           }
@@ -1874,68 +1891,102 @@ public final class PwrMsg {
               pwr_msg.PwrMsg.client_to_client.class, pwr_msg.PwrMsg.client_to_client.Builder.class);
     }
 
-    public static final int NAME_OF_SENDER_FIELD_NUMBER = 1;
-    private volatile java.lang.Object nameOfSender_;
+    public static final int MSG_FIELD_NUMBER = 1;
+    private volatile java.lang.Object msg_;
     /**
-     * <code>optional string name_of_sender = 1;</code>
+     * <code>string msg = 1;</code>
      */
-    public java.lang.String getNameOfSender() {
-      java.lang.Object ref = nameOfSender_;
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        nameOfSender_ = s;
+        msg_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string name_of_sender = 1;</code>
+     * <code>string msg = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getNameOfSenderBytes() {
-      java.lang.Object ref = nameOfSender_;
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        nameOfSender_ = b;
+        msg_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int MSG_CONTENT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object msgContent_;
+    public static final int TO_FIELD_NUMBER = 2;
+    private volatile java.lang.Object to_;
     /**
-     * <code>optional string msg_content = 2;</code>
+     * <code>string to = 2;</code>
      */
-    public java.lang.String getMsgContent() {
-      java.lang.Object ref = msgContent_;
+    public java.lang.String getTo() {
+      java.lang.Object ref = to_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        msgContent_ = s;
+        to_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string msg_content = 2;</code>
+     * <code>string to = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getMsgContentBytes() {
-      java.lang.Object ref = msgContent_;
+        getToBytes() {
+      java.lang.Object ref = to_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        msgContent_ = b;
+        to_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FROM_FIELD_NUMBER = 3;
+    private volatile java.lang.Object from_;
+    /**
+     * <code>string from = 3;</code>
+     */
+    public java.lang.String getFrom() {
+      java.lang.Object ref = from_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        from_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string from = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFromBytes() {
+      java.lang.Object ref = from_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        from_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1954,11 +2005,14 @@ public final class PwrMsg {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNameOfSenderBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, nameOfSender_);
+      if (!getMsgBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, msg_);
       }
-      if (!getMsgContentBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msgContent_);
+      if (!getToBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, to_);
+      }
+      if (!getFromBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, from_);
       }
     }
 
@@ -1967,11 +2021,14 @@ public final class PwrMsg {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNameOfSenderBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, nameOfSender_);
+      if (!getMsgBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, msg_);
       }
-      if (!getMsgContentBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msgContent_);
+      if (!getToBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, to_);
+      }
+      if (!getFromBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, from_);
       }
       memoizedSize = size;
       return size;
@@ -1989,10 +2046,12 @@ public final class PwrMsg {
       pwr_msg.PwrMsg.client_to_client other = (pwr_msg.PwrMsg.client_to_client) obj;
 
       boolean result = true;
-      result = result && getNameOfSender()
-          .equals(other.getNameOfSender());
-      result = result && getMsgContent()
-          .equals(other.getMsgContent());
+      result = result && getMsg()
+          .equals(other.getMsg());
+      result = result && getTo()
+          .equals(other.getTo());
+      result = result && getFrom()
+          .equals(other.getFrom());
       return result;
     }
 
@@ -2002,11 +2061,13 @@ public final class PwrMsg {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + NAME_OF_SENDER_FIELD_NUMBER;
-      hash = (53 * hash) + getNameOfSender().hashCode();
-      hash = (37 * hash) + MSG_CONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getMsgContent().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (37 * hash) + TO_FIELD_NUMBER;
+      hash = (53 * hash) + getTo().hashCode();
+      hash = (37 * hash) + FROM_FIELD_NUMBER;
+      hash = (53 * hash) + getFrom().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2125,9 +2186,11 @@ public final class PwrMsg {
       }
       public Builder clear() {
         super.clear();
-        nameOfSender_ = "";
+        msg_ = "";
 
-        msgContent_ = "";
+        to_ = "";
+
+        from_ = "";
 
         return this;
       }
@@ -2151,8 +2214,9 @@ public final class PwrMsg {
 
       public pwr_msg.PwrMsg.client_to_client buildPartial() {
         pwr_msg.PwrMsg.client_to_client result = new pwr_msg.PwrMsg.client_to_client(this);
-        result.nameOfSender_ = nameOfSender_;
-        result.msgContent_ = msgContent_;
+        result.msg_ = msg_;
+        result.to_ = to_;
+        result.from_ = from_;
         onBuilt();
         return result;
       }
@@ -2194,12 +2258,16 @@ public final class PwrMsg {
 
       public Builder mergeFrom(pwr_msg.PwrMsg.client_to_client other) {
         if (other == pwr_msg.PwrMsg.client_to_client.getDefaultInstance()) return this;
-        if (!other.getNameOfSender().isEmpty()) {
-          nameOfSender_ = other.nameOfSender_;
+        if (!other.getMsg().isEmpty()) {
+          msg_ = other.msg_;
           onChanged();
         }
-        if (!other.getMsgContent().isEmpty()) {
-          msgContent_ = other.msgContent_;
+        if (!other.getTo().isEmpty()) {
+          to_ = other.to_;
+          onChanged();
+        }
+        if (!other.getFrom().isEmpty()) {
+          from_ = other.from_;
           onChanged();
         }
         onChanged();
@@ -2228,140 +2296,209 @@ public final class PwrMsg {
         return this;
       }
 
-      private java.lang.Object nameOfSender_ = "";
+      private java.lang.Object msg_ = "";
       /**
-       * <code>optional string name_of_sender = 1;</code>
+       * <code>string msg = 1;</code>
        */
-      public java.lang.String getNameOfSender() {
-        java.lang.Object ref = nameOfSender_;
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          nameOfSender_ = s;
+          msg_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string name_of_sender = 1;</code>
+       * <code>string msg = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getNameOfSenderBytes() {
-        java.lang.Object ref = nameOfSender_;
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          nameOfSender_ = b;
+          msg_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string name_of_sender = 1;</code>
+       * <code>string msg = 1;</code>
        */
-      public Builder setNameOfSender(
+      public Builder setMsg(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        nameOfSender_ = value;
+        msg_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name_of_sender = 1;</code>
+       * <code>string msg = 1;</code>
        */
-      public Builder clearNameOfSender() {
+      public Builder clearMsg() {
         
-        nameOfSender_ = getDefaultInstance().getNameOfSender();
+        msg_ = getDefaultInstance().getMsg();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string name_of_sender = 1;</code>
+       * <code>string msg = 1;</code>
        */
-      public Builder setNameOfSenderBytes(
+      public Builder setMsgBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        nameOfSender_ = value;
+        msg_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object msgContent_ = "";
+      private java.lang.Object to_ = "";
       /**
-       * <code>optional string msg_content = 2;</code>
+       * <code>string to = 2;</code>
        */
-      public java.lang.String getMsgContent() {
-        java.lang.Object ref = msgContent_;
+      public java.lang.String getTo() {
+        java.lang.Object ref = to_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          msgContent_ = s;
+          to_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string msg_content = 2;</code>
+       * <code>string to = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getMsgContentBytes() {
-        java.lang.Object ref = msgContent_;
+          getToBytes() {
+        java.lang.Object ref = to_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          msgContent_ = b;
+          to_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string msg_content = 2;</code>
+       * <code>string to = 2;</code>
        */
-      public Builder setMsgContent(
+      public Builder setTo(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        msgContent_ = value;
+        to_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string msg_content = 2;</code>
+       * <code>string to = 2;</code>
        */
-      public Builder clearMsgContent() {
+      public Builder clearTo() {
         
-        msgContent_ = getDefaultInstance().getMsgContent();
+        to_ = getDefaultInstance().getTo();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string msg_content = 2;</code>
+       * <code>string to = 2;</code>
        */
-      public Builder setMsgContentBytes(
+      public Builder setToBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        msgContent_ = value;
+        to_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object from_ = "";
+      /**
+       * <code>string from = 3;</code>
+       */
+      public java.lang.String getFrom() {
+        java.lang.Object ref = from_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          from_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string from = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFromBytes() {
+        java.lang.Object ref = from_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          from_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string from = 3;</code>
+       */
+      public Builder setFrom(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        from_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string from = 3;</code>
+       */
+      public Builder clearFrom() {
+        
+        from_ = getDefaultInstance().getFrom();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string from = 3;</code>
+       */
+      public Builder setFromBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        from_ = value;
         onChanged();
         return this;
       }
@@ -2451,8 +2588,8 @@ public final class PwrMsg {
       "\003 \001(\t\"p\n\017type_of_massage\022\024\n\020registration" +
       "_ack\020\000\022\r\n\tlogin_ack\020\001\022 \n\034connect_to_seco" +
       "nd_client_ack\020\002\022\026\n\022logout_request_ack\020\003\"" +
-      "?\n\020client_to_client\022\026\n\016name_of_sender\030\001 " +
-      "\001(\t\022\023\n\013msg_content\030\002 \001(\tb\006proto3"
+      "9\n\020client_to_client\022\013\n\003msg\030\001 \001(\t\022\n\n\002to\030\002" +
+      " \001(\t\022\014\n\004from\030\003 \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2483,7 +2620,7 @@ public final class PwrMsg {
     internal_static_pwr_msg_client_to_client_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_pwr_msg_client_to_client_descriptor,
-        new java.lang.String[] { "NameOfSender", "MsgContent", });
+        new java.lang.String[] { "Msg", "To", "From", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
